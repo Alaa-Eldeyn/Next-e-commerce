@@ -4,8 +4,6 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,5 +27,14 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer {
+  .soft-300 {
+    @apply transition duration-300;
+  }
+  .container{
+    @apply mx-auto px-3;
   }
 }
