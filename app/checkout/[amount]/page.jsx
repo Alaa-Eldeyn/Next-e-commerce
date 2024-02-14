@@ -1,7 +1,7 @@
 "use client";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import CheckoutForm from "./_components/CheckoutForm";
+import CheckoutForm from "../_components/CheckoutForm";
 import { useSearchParams } from "next/navigation";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -13,7 +13,7 @@ function Checkout() {
   const options = {
     mode: "payment",
     currency: "usd",
-    amount: searchParams.get("amount") * 100,
+    amount: searchParams.get("amount") * 100 || 0,
   };
   return (
     <Elements stripe={stripePromise} options={options}>
@@ -21,6 +21,5 @@ function Checkout() {
     </Elements>
   );
 }
-
 
 export default Checkout;
