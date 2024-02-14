@@ -39,7 +39,7 @@ const Cart = () => {
             <ul className="space-y-4">
               {cart.map((item) => {
                 return (
-                  <li key={item} className="flex items-center gap-4">
+                  <li key={item.id} className="flex items-center gap-4">
                     <Image
                       src={
                         item?.product?.attributes?.banner?.data?.attributes?.url

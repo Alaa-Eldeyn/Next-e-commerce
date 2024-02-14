@@ -32,7 +32,7 @@ const CheckoutForm = ({ amount }) => {
       setErrorMessage(error.message);
     };
     createOrder();
-    sendEmail();
+    // sendEmail();
     // Trigger form validation and wallet collection
     const { error: submitError } = await elements.submit();
     if (submitError) {
@@ -91,6 +91,11 @@ const CheckoutForm = ({ amount }) => {
   const sendEmail = async () => {
     const res = await fetch("api/send-email", {
       method: "POST",
+      body: JSON.stringify({
+        amount: amount,
+        email: user.primaryEmailAddress.emailAddress,
+        fullName: user.fullName,
+      }),
     });
   };
   return (
