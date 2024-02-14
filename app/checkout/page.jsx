@@ -13,7 +13,7 @@ function Checkout() {
   const options = {
     mode: "payment",
     currency: "usd",
-    amount: searchParams.get("amount") * 100 || 0,
+    amount: searchParams.get("amount") * 100
   };
   return (
     <Elements stripe={stripePromise} options={options}>
