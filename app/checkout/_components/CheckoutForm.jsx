@@ -32,7 +32,7 @@ const CheckoutForm = ({ amount }) => {
       setErrorMessage(error.message);
     };
     createOrder();
-    // sendEmail();
+    sendEmail();
     // Trigger form validation and wallet collection
     const { error: submitError } = await elements.submit();
     if (submitError) {
